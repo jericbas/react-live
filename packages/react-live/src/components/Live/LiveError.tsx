@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import LiveContext from "./LiveContext";
 
 export default function LiveError<T extends Record<string, unknown>>(props: T) {

@@ -5,12 +5,10 @@ type Props<T extends React.ElementType = React.ElementType> = {
   Component?: T;
 } & React.ComponentPropsWithoutRef<T>;
 
-function LivePreview<T extends keyof JSX.IntrinsicElements>(
+function LivePreview<T extends React.ElementType = "div">(
   props: Props<T>
-): JSX.Element;
-function LivePreview<T extends React.ElementType>(props: Props<T>): JSX.Element;
-
-function LivePreview({ Component = "div", ...rest }: Props): JSX.Element {
+): JSX.Element {
+  const { Component = "div", ...rest } = props;
   const { element: Element } = useContext(LiveContext);
   return <Component {...rest}>{Element ? <Element /> : null}</Component>;
 }

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import LiveContext from "./LiveContext";
 import Editor, { Props as EditorProps } from "../Editor";
 
